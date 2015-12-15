@@ -131,6 +131,24 @@ before_install:
   - mysql -e "create database IF NOT EXISTS test;" -uroot
 ```
 
+### MySQL 5.6
+
+The recommended way to get MySQL 5.6 is switching to our [Trusty CI Environment](/user/trusty-ci-environment/) and manually install the required packages by adding the following lines to the `.travis.yml`:
+
+```yaml
+dist: trusty
+sudo: required
+addons:
+  apt:
+    packages:
+    - mysql-server-5.6
+    - mysql-client-core-5.6
+    - mysql-client-5.6
+```
+
+It's worth noting that **the default mysql root password** will be different, and that you can use sudo to set it to what you expect, which is `travis` everywhere else.
+
+
 ## PostgreSQL
 
 To use PostgreSQL include the following `services` entry in `.travis.yml`:
