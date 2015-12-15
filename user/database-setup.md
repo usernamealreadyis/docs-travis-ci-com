@@ -146,6 +146,8 @@ addons:
     - mysql-client-5.6
 ```
 
+Make sure to use `sudo` to set the default **mysql root password** to the expected value elsewhere, `travis`.
+
 It's worth noting that **the default mysql root password** will be different, and that you can use sudo to set it to what you expect, which is `travis` everywhere else.
 
 
